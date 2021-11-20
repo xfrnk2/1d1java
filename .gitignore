@@ -137,3 +137,6 @@ hs_err_pid*
 
 #xml
 *.xml
+
+#.idea/
+.idea/
