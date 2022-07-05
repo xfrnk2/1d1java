@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.io.BufferedReader;
 
-public class Main {
+public class BOJ2503 {
     public static void main(String[] args) throws IOException{
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();

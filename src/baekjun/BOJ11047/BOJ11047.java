@@ -1,10 +1,12 @@
+package baekjun.BOJ11047;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class Main {
+public class BOJ11047 {
     public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		int N = in.nextInt();

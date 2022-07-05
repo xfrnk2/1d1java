@@ -1,6 +1,8 @@
+package baekjun.BOJ2908;
+
 import java.util.Scanner;
  
-public class Main {
+public class BOJ2908 {
  
 	public static void main(String[] args) {
  

@@ -1,8 +1,10 @@
+package sw_expert_academy.d2;
+
 import java.util.*;
 import java.io.*;
 
 
-class Solution
+class p1959
 {
     
     private static int[] swap (int[] array1, int[] array2) {
