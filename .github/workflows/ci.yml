@@ -22,6 +22,7 @@ jobs:
       run: chmod +x gradlew
     - name: test by gradle
       run: ./gradlew test
+
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
