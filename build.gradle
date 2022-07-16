@@ -1,5 +1,17 @@
 plugins {
     id 'java'
+    id 'jacoco'
+}
+
+jacoco {
+    toolVersion = "0.8.5"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // codecov depends on xml format report
+        html.enabled = true
+    }
 }
 
 group 'org.example'
