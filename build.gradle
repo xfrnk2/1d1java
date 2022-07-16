@@ -3,13 +3,14 @@ plugins {
     id 'jacoco'
 }
 
-jacoco {
-    toolVersion = "0.8.5"
-}
-
-
 group 'org.example'
 version '1.0-SNAPSHOT'
+
+jacoco {
+    toolVersion = "0.8.8"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir') as Directory
+}
+
 
 repositories {
     mavenCentral()
@@ -27,4 +28,15 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
 }
