@@ -16,7 +16,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 15 
-        architecture: 'x64
+        architecture: 'x64'
 
     - name: grant permission
       run: chmod +x gradlew
