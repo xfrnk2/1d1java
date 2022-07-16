@@ -29,3 +29,13 @@ test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
 }
+
+jacocoTestReport {
+    executionData(fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec"))
+
+    reports {
+        html.enabled true
+        xml.enabled true
+        csv.enabled false
+    }
+}
