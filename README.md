@@ -1,11 +1,7 @@
-# 1d1python
+# 1d1java
 
-[![CI](https://github.com/xfrnk2/1d1python/workflows/CI/badge.svg)](https://github.com/zrma/1d1python/actions)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=1d1python&metric=alert_status)](https://sonarcloud.io/dashboard?id=1d1python)
-[![Coverage Status](https://coveralls.io/repos/github/xfrnk2/1d1python/badge.svg?branch=main)](https://coveralls.io/github/xfrnk2/1d1python?branch=main)
-[![Codecov Status](https://codecov.io/gh/xfrnk2/1d1python/branch/main/graphs/badge.svg)](https://codecov.io/gh/xfrnk2/1d1python)
-
-
+[![CI](https://github.com/xfrnk2/1d1java/workflows/CI/badge.svg)](https://github.com/xfrnk2/1d1java/actions)
+[![codecov](https://codecov.io/gh/xfrnk2/1d1java/branch/main/graph/badge.svg?token=MjHjPdKYJE)](https://codecov.io/gh/xfrnk2/1d1java) 
 
 1 day 1 coding with java
 
@@ -13,3 +9,5 @@
 
 - Linux
 - JDK 15
+
+###This repo is currently in directory restructuring including adding JUnit5.
