@@ -10,7 +10,7 @@ class Pos {
 
 }
 
-public class Main {
+public class P1012 {
 	static Scanner sc = new Scanner(System.in);
 	static int[] dx = { 0, 0, -1, 1 };
 	static int[] dy = { -1, 1, 0, 0 };
