@@ -1,17 +1,10 @@
 package boj.p2k.p2700;
 
-import java.util.Scanner;
 
 public class P2798 {
-    public static void main (String[] args) {
-        Scanner in = new Scanner(System.in);
-        int N = in.nextInt();
-        int M = in.nextInt();
+    public static void main (int N, int M, int[] numbers) {
         
-        int[] numbers = new int[N];
-        for (int i = 0; i < N; i++){
-            numbers[i] = in.nextInt();
-        } 
+
         int answer = search(numbers, N, M);
         System.out.println(answer);
     }
