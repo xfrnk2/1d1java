@@ -1,5 +1,6 @@
 package boj.p2k.p2900;
 
+
 public class P2979 {
 	public static void main(int a, int b, int c, int[][] bus) {
 		int start = Integer.MAX_VALUE;
@@ -14,8 +15,10 @@ public class P2979 {
 		int[] scores = new int[end];
 
 		for (int i = start; i < end; i++) {
-			if (start <= bus[i][0] && bus[i][1] < end) {
-				scores[i]++;
+			for (int j = 0; j < 3; j ++) {
+				if (bus[j][0] <= i && i < bus[j][1]) {
+					scores[i]++;
+				}
 			}
 		}
 		for (int i = start; i < end; i++) {
