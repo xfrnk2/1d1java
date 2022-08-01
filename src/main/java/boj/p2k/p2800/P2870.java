@@ -1,5 +1,6 @@
 package boj.p2k.p2800;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -41,16 +42,16 @@ public class P2870 {
 
 		}
 
-		List<Integer> intList = new ArrayList<>();
+		List<BigInteger> intList = new ArrayList<>();
 
 		for (String elem : results) {
-			intList.add(Integer.parseInt(elem));
+			intList.add(new BigInteger(String.valueOf(elem)));
 		}
 
 		Collections.sort(intList);
 
 		StringBuilder sb = new StringBuilder();
-		for (Integer elem : intList) {
+		for (BigInteger elem : intList) {
 			sb.append(elem).append("\n");
 		}
 		System.out.print(sb);
