@@ -11,20 +11,20 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class P2828Test {
+class P2870Test {
 
 	static Stream<Arguments> cases() {
 		return Stream.of(
-			arguments(5, 1, 3, new int[] {1,5,3}, "6")
+			arguments(4, new String[] {"43silos0", "zita002", "le2sim", "231233"}, "0\n2\n2\n43\n231233\n")
 		);
 	}
 
 	@ParameterizedTest
 	@MethodSource("cases")
-	void testMain(int n, int[] arr, String expected) {
+	void testMain(int n, String[] arr, String expected) {
 		ByteArrayOutputStream newConsole = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(newConsole));
-		P2828.solution(n, arr);
+		P2870.solution(n, arr);
 		assertEquals(newConsole.toString(), expected);
 	}
 
