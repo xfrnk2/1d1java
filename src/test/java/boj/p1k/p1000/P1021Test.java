@@ -14,7 +14,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import boj.p1k.p1000.p1021;
+import boj.p1k.p1000.P1021;
 
 class P1021Test {
 
