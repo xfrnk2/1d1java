@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.*;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.stream.Stream;
 
@@ -23,7 +24,7 @@ public class P2164Test {
 
 	@ParameterizedTest
 	@MethodSource("cases")
-	void testMain(int n, String expected) {
+	void testMain(int n, String expected) throws IOException {
 		ByteArrayOutputStream newConsole = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(newConsole));
 		P2164.solution(n);
