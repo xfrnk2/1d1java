@@ -1,6 +1,8 @@
+package boj.p5k.p5500;
+
 import java.util.Scanner;
 
-public class Main {
+public class P5597 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

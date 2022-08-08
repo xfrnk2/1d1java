@@ -1,10 +1,12 @@
+package boj.p1k.p1000;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class P1062 {
 
 	static int N, K;
 	static String[] words;
