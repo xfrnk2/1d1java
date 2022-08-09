@@ -5,7 +5,7 @@ public class P2563 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		boolean[][] paper = new boolean[100][100]; //도화지 면적은 가로세로100
+		boolean[][] paper = new boolean[100][100];
 		int n = sc.nextInt();
 		int ans = 0;
 		for(int k = 0; k < n; k++) {
