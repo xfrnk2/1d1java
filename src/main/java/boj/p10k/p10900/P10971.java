@@ -1,8 +1,8 @@
 package boj.p10k.p10900;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class P10971 {
@@ -26,27 +26,35 @@ public class P10971 {
 
 	public static void solution(int n, int[][] matrix) {
 		visited = new boolean[n];
-		cycle(n, 0, 0, matrix, 0);
+		for (int i = 0; i < n; i++) {
+			visited = new boolean[n];
+			visited[i] = true;
+			cycle(n, i, 0, matrix, i);
+		}
 		System.out.print(ans);
 	}
 
-	public static void cycle(final int n, int cnt, int cost, int[][] matrix, int pos) {
-		if (cnt == n) {
-			System.out.println("pos" + "" + pos + " " + cost);
-			for (int i = 0; i < n; i++) {
-				System.out.println(visited[i]);
-			}
-			if (pos != 0) return;
-			ans = Math.min(ans, cost);
+	private static boolean checkIsAllVisited(int n) {
+		for (boolean flag : visited) {
+			if (!flag)
+				return false;
+		}
+		return true;
+	}
+
+	public static void cycle(final int n, int start, int cost, int[][] matrix, int pos) {
+		if (checkIsAllVisited(n)) {
+			if (matrix[pos][start] == 0)
+				return;
+			ans = Math.min(ans, cost + matrix[pos][0]);
 			return;
 		}
-		for (int i = 0; i < n; i++) {
+		for (int i = 1; i < n; i++) {
 			if (matrix[pos][i] != 0 && !visited[i]) {
 				visited[i] = true;
-				cycle(n, cnt + 1, cost + matrix[cnt][i], matrix, i);
+				cycle(n, start, cost + matrix[pos][i], matrix, i);
 				visited[i] = false;
 			}
 		}
 	}
-
 }
