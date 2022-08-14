@@ -1,3 +1,4 @@
+package boj.p1k.p1600;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;

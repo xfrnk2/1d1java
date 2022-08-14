@@ -1,3 +1,4 @@
+package boj.p2k.p2600;
 import java.util.Arrays;
 import java.util.Scanner;
 
