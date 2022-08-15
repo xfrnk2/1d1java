@@ -1,8 +1,10 @@
+
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public Main {
+public class P1260 {
 	static int N, M, V, cnt;
 	static boolean[][] matrix;
 	static boolean[] visited;
