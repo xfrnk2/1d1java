@@ -21,17 +21,17 @@ class P2468Test {
 					{6, 7, 3, 3, 2},
 					{7, 2, 5, 3, 6},
 					{8, 9, 5, 2, 7}
-				},
+				}, 9,
 				"5")
 		);
 	}
 
 	@ParameterizedTest
 	@MethodSource("cases")
-	void testMain(int n, int[][] area, String expected) {
+	void testMain(int n, int[][] area, int top, String expected) {
 		ByteArrayOutputStream newConsole = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(newConsole));
-		P2468.solution(n, area);
+		P2468.solution(n, area, top);
 		assertEquals(newConsole.toString(), expected);
 	}
 

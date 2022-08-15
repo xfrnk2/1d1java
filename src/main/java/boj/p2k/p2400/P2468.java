@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class P2468 {
-	static int N;
+	static int N, top;
 	static int[][] di = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 	static int[][] area;
 	static boolean[][] visited;
@@ -14,9 +14,8 @@ public class P2468 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
-		int top = 0;
-		area = new int[N][N];
-		visited = new boolean[N][N];
+
+		//area = new int[N][N];
 
 		for (int i = 0; i < N; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
@@ -26,7 +25,7 @@ public class P2468 {
 				area[i][j] = cur;
 			}
 		}
-		solution(N, top);
+		solution(N, area, top);
 	}
 
 	public static void search(int x, int y) {
@@ -39,8 +38,11 @@ public class P2468 {
 		}
 	}
 
-	public static void solution(int n, int top) {
-
+	public static void solution(int n, int[][] _area, int _top)  {
+		N = n;
+		area = _area;
+		top = _top;
+		visited = new boolean[n][n];
 		int ans = 1;
 
 		for (int r = 0; r < top; r++) {
@@ -63,7 +65,7 @@ public class P2468 {
 			visited = new boolean[N][N];
 			ans = Math.max(ans, cnt);
 		}
-		System.out.println(ans);
+		System.out.print(ans);
 	}
 
 }
