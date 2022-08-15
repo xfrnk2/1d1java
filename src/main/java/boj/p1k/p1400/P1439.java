@@ -30,7 +30,7 @@ public class P1439 {
 			prev = str.charAt(i);
 			addCnt(prev);
 		}
-		System.out.println(Math.min(one, zero));
+		System.out.print(Math.min(one, zero));
 	}
 }
 

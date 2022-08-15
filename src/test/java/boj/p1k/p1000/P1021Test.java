@@ -21,7 +21,7 @@ class P1021Test {
 	static Stream<Arguments> cases() {
 		return Stream.of(
 
-			arguments(10, 3, new int[] {2, 9, 5}, "0"),
+			arguments(10, 3, new int[] {2, 9, 5}, "8"),
 			arguments(32, 6, new int[] {27, 16, 30, 11, 6, 23}, "59")
 		);
 	}

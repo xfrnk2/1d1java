@@ -14,7 +14,6 @@ public class P2164 {
 
 		int n = sc.nextInt();
 		solution(n);
-		bw.flush();
 	}
 
 	public static void solution(int n) throws IOException {
@@ -28,6 +27,6 @@ public class P2164 {
 			queue.offer(queue.poll());
 		}
 		bw.write(queue.poll() + "");
-		System.out.println((char)6);
+		bw.flush();
 	}
 }

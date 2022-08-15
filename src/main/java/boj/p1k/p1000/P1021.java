@@ -34,7 +34,7 @@ public class P1021 {
 			answer += Math.min(cnt, queue.size() - cnt);
 			queue.poll();
 		}
-		System.out.println(answer);
+		System.out.print(answer);
 
 	}
 }
