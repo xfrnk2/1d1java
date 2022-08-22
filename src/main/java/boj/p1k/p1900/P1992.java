@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class P1900 {
+public class P1922 {
 
 	
 	static char[][] board;
