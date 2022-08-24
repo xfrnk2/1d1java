@@ -1,3 +1,5 @@
+package boj.p3k.p3000;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;

@@ -1,3 +1,6 @@
+package boj.p3k.p3000;
+
+
 import java.util.Scanner;
 
 public class P3040 {
