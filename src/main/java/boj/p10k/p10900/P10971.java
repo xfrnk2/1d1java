@@ -1,60 +1,47 @@
 package boj.p10k.p10900;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class P10971 {
-	static int ans = Integer.MAX_VALUE;
+	static int N, ans = Integer.MAX_VALUE;
+	static int[] city;
+	static int[][] map;
 	static boolean[] visited;
-
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
-		int[][] matrix = new int[n][n];
-
-		for (int i = 0; i < n; i++) {
-			StringTokenizer st = new StringTokenizer(br.readLine());
-			for (int j = 0; j < n; j++) {
-				matrix[i][j] = Integer.parseInt(st.nextToken());
+	
+	
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		city = new int[N];
+		map = new int[N][N];
+		visited = new boolean[N];
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < N; j++) {
+				map[i][j] = sc.nextInt();
 			}
-
 		}
-		solution(n, matrix);
+		
+		
+		permutation(0, 0);
+		System.out.println(ans);
 	}
-
-	public static void solution(int n, int[][] matrix) {
-		visited = new boolean[n];
-		for (int i = 0; i < n; i++) {
-			visited = new boolean[n];
-			visited[i] = true;
-			cycle(n, i, 0, matrix, i);
-		}
-		System.out.print(ans);
-	}
-
-	private static boolean checkIsAllVisited(int n) {
-		for (boolean flag : visited) {
-			if (!flag)
-				return false;
-		}
-		return true;
-	}
-
-	public static void cycle(final int n, int start, int cost, int[][] matrix, int pos) {
-		if (checkIsAllVisited(n)) {
-			if (matrix[pos][start] == 0)
-				return;
-			ans = Math.min(ans, cost + matrix[pos][0]);
+	
+	public static void permutation(int cnt, int sum) {
+		if (cnt == N) {
+			int lastCost = map[city[N - 1]][city[0]];
+			if (lastCost != 0) {
+				ans = Math.min(ans, sum + lastCost);
+			}
 			return;
 		}
-		for (int i = 1; i < n; i++) {
-			if (matrix[pos][i] != 0 && !visited[i]) {
-				visited[i] = true;
-				cycle(n, start, cost + matrix[pos][i], matrix, i);
-				visited[i] = false;
-			}
+		for (int i = 0; i < N; i++) {
+			if (visited[i]) continue;
+			if (cnt > 0 && map[city[cnt - 1]][i] == 0) continue; 
+			city[cnt] = i;
+			visited[i] = true;
+			permutation(cnt + 1,
+					cnt == 0 ? 0 : sum + map[city[cnt-1]][i]);
+			visited[i] = false;
 		}
 	}
 }
