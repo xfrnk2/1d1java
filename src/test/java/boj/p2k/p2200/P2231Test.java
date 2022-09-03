@@ -15,17 +15,14 @@ class P2231Test {
 
 	static Stream<Arguments> cases() {
 		return Stream.of(
-			arguments(216, "198")
+			arguments(216, 198)
 		);
 	}
 
 	@ParameterizedTest
 	@MethodSource("cases")
-	void testMain(int n, String expected) {
-		ByteArrayOutputStream newConsole = new ByteArrayOutputStream();
-		System.setOut(new PrintStream(newConsole));
-		P2231.main(n);
-		assertEquals(newConsole.toString(), expected);
+	void testMain(int n, intexpected) {
+		assertEquals(P2231.search(n), expected);
 	}
 
 }

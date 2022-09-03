@@ -9,7 +9,7 @@ public class P2231 {
         System.out.print(answer);
     }
     
-    static int search(final int N){
+    public static int search(final int N){
         for (int i = 1; i < N; i++){
             int temp = i;
             int result = 0;
