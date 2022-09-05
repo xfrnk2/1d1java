@@ -24,7 +24,7 @@ class P1437Test {
 	void testMain(int n, String expected) {
 		ByteArrayOutputStream newConsole = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(newConsole));
-		P2231.search(n);
+		P1437.search(n);
 		assertEquals(newConsole.toString(), expected);
 	}
 
