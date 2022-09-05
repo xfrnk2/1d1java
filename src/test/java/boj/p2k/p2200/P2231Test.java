@@ -21,7 +21,7 @@ class P2231Test {
 
 	@ParameterizedTest
 	@MethodSource("cases")
-	void testMain(int n, intexpected) {
+	void testMain(int n, int expected) {
 		assertEquals(P2231.search(n), expected);
 	}
 
