@@ -1,4 +1,5 @@
-package boj.p10k.p10900;
+package boj.p16k.p16900;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.*;
@@ -11,22 +12,21 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class P10971Test {
+
+class P16946Test {
 
 	static Stream<Arguments> cases() {
 		return Stream.of(
-			arguments(4, new int[][] {new int[] {0, 10, 15, 20}, new int[] {5, 0, 9, 10},
-				new int[] {6, 13, 0, 12}, new int[] {8, 8, 9, 0}}, "35")
+			arguments(3, 3, new char[][] {{'1', '0', '1'}, {'0', '1', '0'}, {'1', '0', '1'}}, "303\n050\n303\n")
 		);
 	}
 
 	@ParameterizedTest
 	@MethodSource("cases")
-	void testMain(int n, int[][] matrix, String expected) {
+	void testMain(int n, int m, char[][] map, String expected) {
 		ByteArrayOutputStream newConsole = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(newConsole));
-
-		P10971.solution(n, matrix);
+		P16946.solve(n, m, map);
 		assertEquals(newConsole.toString(), expected);
 	}
 
