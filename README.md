@@ -4,6 +4,7 @@
 [![codecov](https://codecov.io/gh/xfrnk2/1d1java/branch/main/graph/badge.svg?token=MjHjPdKYJE)](https://codecov.io/gh/xfrnk2/1d1java) 
 
 1 day 1 coding with java
+BOJ & SWEA & JUNGOL
 
 ## Requirement
 
