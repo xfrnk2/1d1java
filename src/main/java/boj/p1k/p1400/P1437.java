@@ -9,13 +9,14 @@ public class P1437 {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
-		System.out.println(search(N));
+		search(N);
 
 	}
 
-	public static int search(int n) {
+	public static void search(int n) {
 		if (n < 5) {
-			return n;
+			System.out.print(n);
+			return;
 		}
 
 		int[] D = new int[1000001];
@@ -26,8 +27,7 @@ public class P1437 {
 		for (int i = 5; i <= n; i++) {
 			D[i] = (D[i - 3] * 3) % 10007;
 		}
-
-		return D[n];
+		System.out.print(D[n]);
 
 	}
 
