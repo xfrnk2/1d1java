@@ -1,104 +1,76 @@
+package boj.p16k.p16700;
+
+import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
+import java.util.function.IntBinaryOperator;
 
-public class Main {
+public class P16724 {
+    static int N, M;
+    static int[][] di = new int[][] {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // 상하좌우
+    static int[][] map;
+    static boolean[][] visited;
+    static int cnt = 0;
 
-    static char[][] board;
-    static int[][] markBoard;
-    static int count;
-    static int n, m;
-    static final int nowTraversing = -1;
-    static int[] dx = {-1, 0, 1, 0};
-    static int[] dy = {0, 1, 0, -1};
 
     public static void main(String[] args) throws IOException {
-        init();
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(in.readLine());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
+        map = new int[N][M];
+        visited = new boolean[N][M];
 
-        markAll();
-
-        System.out.println(count);
-    }
-
-    private static void init() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        n = pi(st.nextToken());
-        m = pi(st.nextToken());
-
-        board = new char[n][m];
-        markBoard = new int[n][m];
-        count = 0;
-        for (int i = 0; i < n; i++) {
-            String line = br.readLine();
-            for (int j = 0; j < m; j++) {
-                board[i][j] = line.charAt(j);
+        for (int i = 0; i < N; i++) {
+            String line = in.readLine();
+            for (int j = 0; j < M; j++) {
+                char cur = line.charAt(j);
+                map[i][j] = cur == 'L' ? 2 : cur == 'R' ? 3 : cur == 'U' ? 0 : 1;
             }
         }
-    }
 
-    private static void markAll() {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (markBoard[i][j] == 0) {
-                    markBoard[i][j] = traverse(i, j);
-                }
+     
+        
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+            	if (visited[i][j]) continue;
+            	int dirCode= map[i][j];
+                int nx = i + di[dirCode][0], ny = j + di[dirCode][1];
+                
+            	search(i, j, nx, ny);
             }
         }
-    }
+        System.out.println(cnt);
+        
+        
+        
+        
 
-    static int traverse(int x, int y) {//dfs라고 보셔도 무방합니다
-        if(!valid(x, y) || isLoop(x, y)) {
-            return ++count;
-        } else if(isMarked(x, y)) {
-            return markBoard[x][y];
-        } else {
-            markBoard[x][y] = nowTraversing;
-
-            int dir = getDir(board[x][y]);
-            int nextX = x + dx[dir];
-            int nextY = y + dy[dir];
-            markBoard[x][y] = traverse(nextX, nextY);
-
-            return markBoard[x][y];
+    
+}
+    
+    
+    public static boolean search(int sx, int sy, int x, int y) {
+    	if (visited[x][y]) return false;
+    	visited[x][y] = true;
+    	if (x == sx && y == sy) {		
+    		cnt ++;
+    		return true;
+    	}
+    
+    	int dirCode= map[x][y];
+        int nx = x + di[dirCode][0], ny = y + di[dirCode][1];
+  
+        if (!search(sx, sy, nx, ny)) {        	
+        	visited[x][y] = false;
         }
+        return false;
     }
-
-    static boolean isLoop(int x, int y) {
-        if (markBoard[x][y] == nowTraversing) {
-            return true;
-        } else return false;
-    }
-
-    static boolean valid(int x, int y) {
-        if(x < 0 || x >= n || y < 0 || y >= m) return false;
-        else return true;
-    }
-
-    static boolean isMarked(int x, int y) {
-        if(markBoard[x][y] > 0) return true;
-        else return false;
-    }
-
-    static int getDir(char c) {
-        switch(c) {
-            case 'U':
-                return 0;
-            case 'R':
-                return 1;
-            case 'D':
-                return 2;
-            case 'L':
-                return 3;
-            default:
-                System.out.println("wrong character Input");
-                return -1;
-        }
-    }
-
-    public static int pi(String str) {
-        return Integer.parseInt(str);
-    }
-
+    
+    
 }
