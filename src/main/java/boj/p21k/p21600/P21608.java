@@ -1,4 +1,4 @@
-package boj.p18k.p18800;
+package boj.p21k.p21600;
 
 
 import java.awt.Point;
