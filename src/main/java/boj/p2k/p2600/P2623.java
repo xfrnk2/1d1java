@@ -1,45 +1,70 @@
 package boj.p2k.p2600;
-import java.util.Arrays;
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
-public class P2644 {
-	public static void main (String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int N = sc.nextInt();
-		int a = sc.nextInt(), b = sc.nextInt();
-		int M = sc.nextInt();
-		int answer = 0;
-		
-		boolean[][] map = new boolean[N + 1][N + 1]; 
-		boolean[][] visited = new boolean[N + 1][N + 1]; 
-		
+public class P2623 {
+	static int N, M;
+	static int indegree[];
+	static ArrayList<Integer>[] edges;
+	static StringBuilder sb = new StringBuilder();
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(in.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		indegree = new int[N + 1];
+		edges = new ArrayList[N + 1];
+
+		for (int i = 1; i <= N; i++) {
+			edges[i] = new ArrayList<>(N);
+		}
 		for (int i = 0; i < M; i++) {
-			int parent = sc.nextInt();
-			int child = sc.nextInt();
-			map[parent][child] = true;
-			map[child][parent] = true;
-		}
-		
-		Queue<int[]> q = new LinkedList<int[]>();
-		q.offer(new int[] {a, 0});
-		while(!q.isEmpty() && answer == 0) {
-			int[] cur = q.poll();
-			if (cur[0] == b) {
-				answer = cur[1];
-				break;
-			}
-			for (int i = 1; i <= N; i++) {
+			st = new StringTokenizer(in.readLine());
+			int c = Integer.parseInt(st.nextToken());
+			int prev = Integer.parseInt(st.nextToken());
+			for (int j = 1; j < c; j++) {
+				int cur = Integer.parseInt(st.nextToken());
 
-				if (map[i][cur[0]] && !visited[i][cur[0]]) {
-					visited[i][cur[0]] = true;
-					visited[cur[0]][i] = true;
-					q.offer(new int[] {i, cur[1] + 1});
-				}
+				edges[prev].add(cur);
+				prev = cur;
+				indegree[cur]++;
+			}
+
+		}
+
+		System.out.print(topologySort() == N ? sb : 0);
+
+	}
+
+	public static int topologySort() {
+		int cnt = 0;
+		Queue<Integer> q = new LinkedList<>();
+		for (int i = 1; i <= N; i++) {
+			if (indegree[i] == 0)
+				q.offer(i);
+		}
+
+		while (!q.isEmpty()) {
+			int cur = q.poll();
+			cnt++;
+			sb.append(cur).append("\n");
+
+			for (int k = 0, size = edges[cur].size(); k < size; k++) {
+				int nxt = edges[cur].get(k);
+				indegree[nxt]--;
+				if (indegree[nxt] == 0)
+					q.offer(nxt);
 			}
 		}
-		System.out.println(answer == 0 ? -1 : answer);
-		
+		return cnt;
 	}
+
 }
