@@ -1,4 +1,4 @@
-package boj.p4k.p4300;
+package boj;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class P4358 {
@@ -24,7 +25,7 @@ public class P4358 {
 		}
 	}
 
-	static class Res implements Comparable<Res> {
+	static class Res {
 		String str;
 		float rate;
 
@@ -34,9 +35,6 @@ public class P4358 {
 			this.rate = f;
 		}
 
-		public int compareTo(Res o) {
-			return str.compareTo(o.str);
-		}
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -54,7 +52,12 @@ public class P4358 {
 		}
 		search(root, new StringBuilder());
 
-		Collections.sort(result, null);
+		Collections.sort(result, new Comparator<Res>() {
+			@Override
+			public int compare(Res o1, Res o2) {
+				return o1.str.compareTo(o2.str);
+			}
+		});
 		for (Res elem : result) {
 			out.write(String.format("%s %.4f\n", elem.str, elem.rate));
 		}
@@ -85,7 +88,7 @@ public class P4358 {
 		for (int j = 0; j < 96; j++) {
 			int i = j + 32;
 			if (node.child[j] != null) {
-				sb.append((char) i);
+				sb.append((char) (j + 32));
 				search(node.child[j], sb);
 				sb.deleteCharAt(sb.length() - 1);
 			}
