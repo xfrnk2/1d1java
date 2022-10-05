@@ -1,4 +1,4 @@
-package boj.p1k.p1300;
+package boj.p13k.p13400;
 
 import java.awt.Point;
 import java.io.BufferedReader;
