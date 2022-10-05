@@ -1,4 +1,4 @@
-package boj.p4k/p4300;
+package boj.p4k.p4300;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,5 +1,4 @@
 package boj.p1k.p1700;
-package boj;
 
 import java.awt.Point;
 import java.io.BufferedReader;
