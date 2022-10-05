@@ -124,7 +124,7 @@ public class P17267 {
 		
 	
 
-}
+
 
 /*
 자바의 우선순위 큐. java.util.PriorityQueue
