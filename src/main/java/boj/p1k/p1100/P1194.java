@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main {
+public class P1194 {
 	static int N, M, ans = -1;
 	static char[][] map;
 	static boolean[][][] visit;
