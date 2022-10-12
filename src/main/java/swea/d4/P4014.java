@@ -1,10 +1,13 @@
+package swea.d4;
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
  
-public class Solution {
+public class P4014 {
  
     static int N, X;
     static int[][] map;
