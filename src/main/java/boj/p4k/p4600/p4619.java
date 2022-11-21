@@ -9,29 +9,29 @@ public class P4619 {
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-
+		StringTokenizer st;
 		while(true) {
-			StringTokenizer st = new StringTokenizer(in.readLine());
-			int B = Integer.parseInt(st.nextToken());
+			st = new StringTokenizer(in.readLine());
+			int b = Integer.parseInt(st.nextToken());
 			int N = Integer.parseInt(st.nextToken());
 
 			int num1 = 0;
 			int num2 = 0;
 
-			if(B == 0 && N == 0) break;
+			if(b == 0 && N == 0) break;
 			
 			
 			int A = 0;
 			while(true) {
-				if(Math.pow(A, N) <= B) {
+				if(Math.pow(A, N) <= b) {
 					num1 = A;
-				}else if(Math.pow(A, N) > B){
+				}else if(Math.pow(A, N) > b){
 					num2 = A;
 					break;
 				}
 				A++;
 			}
-    	int result = (Math.abs(Math.pow(num1, N) - B) <= Math.abs(Math.pow(num2, N) - B)) ? num1 : num2;
+    	int result = (Math.abs(Math.pow(num1, N) - b) <= Math.abs(Math.pow(num2, N) - b)) ? num1 : num2;
 			
 			System.out.println(result);
 		}
