@@ -3,9 +3,9 @@ package boj.p2k.p2700;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class P2720 {
+public class Main {
     private static final int[] coins = {25, 10, 5, 1};
-    private void solution() throws Exception {
+    private void main() throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int t = Integer.parseInt(br.readLine());
         StringBuilder sb = new StringBuilder();
