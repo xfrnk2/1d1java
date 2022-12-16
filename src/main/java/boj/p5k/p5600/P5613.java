@@ -1,7 +1,10 @@
+package boj.p5k.p5600;
+
+
 import java.util.*;
 
 
-public class Main {
+public class P5613 {
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
