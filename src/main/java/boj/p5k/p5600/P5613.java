@@ -1,7 +1,7 @@
 package boj.p5k.p5600;
 
 
-import java.util.*;
+import java.util.Scanner;
 
 
 public class P5613 {
