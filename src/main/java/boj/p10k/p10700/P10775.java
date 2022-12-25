@@ -1,6 +1,4 @@
 package boj.p10k.p10700;
-
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
@@ -18,23 +16,21 @@ public class P10775 {
 		G = Integer.valueOf(in.readLine());
 		P = Integer.valueOf(in.readLine());
 		visit = new int[G + 1];
-		int start = 1;
 		boolean finish = true;
 		for (int i = 0; i < P; i++) {
 			int target = Integer.valueOf(in.readLine());
-
 			while (target > 0 && visit[target] > 0) {
-				
 				visit[target]++;
 				target-= visit[target] - 1;
 			}
 
 			if (target <= 0) {
 				break;
-			} else {
-				visit[target] = 1;
-				ans ++;
-			}
+			} 
+            
+			visit[target] = 1;
+			ans ++;
+			
 
 
 		}
