@@ -1,4 +1,4 @@
-package boj.p10k.10800;
+package boj.p10k.P10800;
 
 import java.io.BufferedReader;
 import java.io.IOException;
