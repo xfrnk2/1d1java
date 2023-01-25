@@ -1,4 +1,4 @@
-package.boj.p2k.p2900;
+package boj.p2k.p2900;
 
 import java.io.*;
 import java.util.*;
