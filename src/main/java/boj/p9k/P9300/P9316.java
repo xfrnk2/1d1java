@@ -1,4 +1,4 @@
-package boj.p9k.P9316;
+package boj.p9k.p9300.P9316;
 
 
 import java.util.Scanner;
