@@ -1,4 +1,4 @@
-package boj.p18k.18400;
+package boj.p18k.p18400;
 
 
 import java.io.BufferedReader;
