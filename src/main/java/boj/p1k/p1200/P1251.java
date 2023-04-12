@@ -10,8 +10,6 @@ public class P1251 {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
 		StringBuilder sb = new StringBuilder(in.readLine());
-		PriorityQueue<String> pq = new PriorityQueue<>();
-
 		String ans = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz";
 
 		int size = sb.length();
