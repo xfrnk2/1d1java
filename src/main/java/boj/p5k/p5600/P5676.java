@@ -1,5 +1,6 @@
 package boj.p5k.p5600;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,7 +25,7 @@ public class P5676 {
 
 	public static int change(int node, int start, int end, int idx, int value) {
 		if (idx < start || end < idx)
-			return 1;
+			return tree[node];
 		if (start == end) {
 
 			return tree[node] = value;
@@ -72,7 +73,6 @@ public class P5676 {
 				int b = Integer.parseInt(st.nextToken());
 				if (s.equals("C")) {
 					b = b == 0 ? 0 : b < 0 ? -1 : 1;
-					arr[a] = b;
 					change(1, 1, N, a, b);
 				} else if (s.equals("P")) {
 					int res = mul(1, 1, N, a, b);
