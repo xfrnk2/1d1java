@@ -11,7 +11,7 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-public class P2886 {
+public class P2866 {
 
 	static int R, C;
 	static StringBuilder[] arr;
