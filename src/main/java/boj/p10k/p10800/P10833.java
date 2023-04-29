@@ -1,4 +1,4 @@
-pakcage boj.p10k.p10800;
+package boj.p10k.p10800;
 
 
 import java.io.BufferedReader;
