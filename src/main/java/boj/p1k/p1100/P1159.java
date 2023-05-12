@@ -5,7 +5,7 @@ import java.util.*;
 
 public class P1159 {
 	static int N;
-    static int[] alpha;
+    	static int[] alpha;
 	public static void main(String[] args) {
 
 		
@@ -21,7 +21,7 @@ public class P1159 {
 		
 		for(int i = 0; i < alpha.length; i++) {
 			if(alpha[i]>=5) {
-				t;
+				t ++;
 				System.out.printf("%c", i +'a');
 			}
 		}
