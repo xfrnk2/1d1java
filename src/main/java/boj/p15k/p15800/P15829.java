@@ -21,3 +21,4 @@ class P15829 {
         }
         System.out.println(sum % m);
     }
+}
