@@ -3,7 +3,7 @@ package boj.p11k.p11500;
 
 import java.util.Scanner;
 
-public class P11539 {
+public class P11549 {
 
 	public static void main(String[] args) {		Scanner sc = new Scanner(System.in);
 
