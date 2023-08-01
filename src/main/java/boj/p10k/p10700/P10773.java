@@ -13,7 +13,7 @@ public class P10773 {
 		Stack<Integer> stack = new Stack<>();
 
 		for(int i=0; i<K; i++) {
-			int input = Integer.parseInt(br.readLine());
+			int input = Integer.parseInt(in.readLine());
 
 			if(input == 0) {
 				stack.pop();
